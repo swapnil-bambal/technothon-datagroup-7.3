@@ -1,0 +1,22 @@
+python Ingestion.py --s_path C:\Users\supriya_mangnale\Downloads\archive\acc_16.csv  --s_type csv --t_path C:\Users\supriya_mangnale\Desktop\DataIngestion\data --t_type csv
+(csv to csv) 
+python Ingestion.py --s_path C:\Users\supriya_mangnale\Desktop\DataIngestion\industry.csv  --s_type csv --t_path C:\Users\supriya_mangnale\Desktop\DataIngestion\extract_data --t_type parquet
+(csv to parquet) 
+python Ingestion.py --s_path C:\Users\supriya_mangnale\Desktop\DataIngestion\extract_data\data.parquet  --s_type parquet --t_path C:\Users\supriya_mangnale\Desktop\DataIngestion\csvFol --t_type csv
+(parquet to csv)
+python Ingestion.py --s_path C:\Users\supriya_mangnale\Desktop\DataIngestion\extract_data\data.parquet  --s_type parquet --t_path C:\Users\supriya_mangnale\Desktop\DataIngestion\parquetFol --t_type parquet
+(parquet to parquet)
+
+python Ingestion.py --s_path jdbc:postgresql://localhost:5432/my_first --s_type rdbms  --s_table_name demo  --s_db_name my_first --s_username postgres --s_password Password123 --t_path C:\Users\supriya_mangnale\Desktop\DataIngestion\parquetFol --t_type parquet
+(rdbms to parquet)
+
+python Ingestion.py --s_path jdbc:postgresql://localhost:5432/my_first --s_type rdbms  --s_table_name supriya  --s_db_name my_first --s_username postgres --s_password Password123 --t_path C:\Users\supriya_mangnale\Desktop\DataIngestion\CSVFo1 --t_type csv
+(rdbms to csv)
+
+python Ingestion.py --s_path C:\Users\supriya_mangnale\Desktop\DataIngestion\extract_data\data.parquet  --s_type parquet --t_path jdbc:postgresql://localhost:5432/my_first --t_type rdbms  --t_table_name demo1  --t_db_name my_first --t_username postgres --t_password Password123 
+(parquet to rdbms)
+
+python Ingestion.py --s_path C:\Users\supriya_mangnale\Desktop\DataIngestion\industry.csv --s_type csv  --t_path jdbc:postgresql://localhost:5432/my_first --t_type rdbms  --t_table_name presentation  --t_db_name my_first --t_username postgres --t_password Password123 
+(csv to rdbms)
+
+python Ingestion.py --s_path https://technoteststorage2.blob.core.windows.net/technotestcont2/Technotestdir1/annual-enterprise-survey-2021-financial-year-provisional-csv.csv?sp=racwo"&"st=2023-03-29T10:32:18Z"&"se=2023-03-31T18:32:18Z"&"sv=2021-12-02"&"sr=b"&"sig=MFr4yHFXSl%2BfltOKARc95UquZ6zXt%2BBNYuhOyOJ8bT4%3D --s_type csv --t_path C:\Users\supriya_mangnale\Desktop\DataIngestion\extract_data --t_type csv  
